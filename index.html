@@ -32,6 +32,7 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
         body { font-family: 'Inter', sans-serif; }
+        html { scroll-behavior: smooth; }
 
         .gradient-text {
             background: linear-gradient(135deg, #FF9933 0%, #e68a2e 50%, #cc7a29 100%);
@@ -361,18 +362,6 @@
             link.addEventListener('click', function() { mobileMenu.classList.add('hidden'); });
         });
 
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                var href = this.getAttribute('href');
-                var target = document.querySelector(href);
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    history.pushState(null, '', href);
-                }
-            });
-        });
     </script>
 </body>
 </html>
