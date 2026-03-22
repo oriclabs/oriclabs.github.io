@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - ORIC Labs</title>
+    <meta name="description" content="Privacy policy for ORIC Labs extensions and services. Learn what data we collect, how we use it, and your rights.">
+    <link rel="icon" type="image/svg+xml" href="icon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        saffron: {
+                            50: '#fff8f0',
+                            100: '#fff0db',
+                            200: '#ffddb3',
+                            300: '#ffc580',
+                            400: '#ffaa4d',
+                            500: '#FF9933',
+                            600: '#e68a2e',
+                            700: '#cc7a29',
+                            800: '#995c1f',
+                            900: '#663d14',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .card-hover { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .card-hover:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(255, 153, 51, 0.15); }
+
+        [data-theme="light"] { color-scheme: light; }
+        [data-theme="light"] body { background: #fafafa; color: #1a1a2e; }
+        [data-theme="light"] nav { background: rgba(250,250,250,0.85); border-color: rgba(0,0,0,0.08); }
+        [data-theme="light"] #mobile-menu { background: rgba(250,250,250,0.97); border-color: rgba(0,0,0,0.08); }
+        [data-theme="light"] .bg-gray-950 { background: #fafafa; }
+        [data-theme="light"] .bg-gray-950\/80 { background: rgba(250,250,250,0.85); }
+        [data-theme="light"] .bg-gray-900 { background: #ffffff; }
+        [data-theme="light"] .bg-gray-800 { background: #e5e7eb; }
+        [data-theme="light"] .border-gray-800 { border-color: #e5e7eb; }
+        [data-theme="light"] .border-gray-800\/50 { border-color: rgba(0,0,0,0.08); }
+        [data-theme="light"] .border-gray-700 { border-color: #d1d5db; }
+        [data-theme="light"] .text-gray-100 { color: #1a1a2e; }
+        [data-theme="light"] .text-gray-300 { color: #374151; }
+        [data-theme="light"] .text-gray-400 { color: #6b7280; }
+        [data-theme="light"] .text-gray-500 { color: #9ca3af; }
+        [data-theme="light"] footer { border-color: rgba(0,0,0,0.08); }
+        [data-theme="light"] .card-hover:hover { box-shadow: 0 12px 32px rgba(255, 153, 51, 0.1); }
+        .theme-toggle { transition: transform 0.2s ease; }
+        .theme-toggle:hover { transform: scale(1.1); }
+    </style>
+    <script>
+        (function() {
+            var t = localStorage.getItem('oric-theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', t);
+        })();
+    </script>
+</head>
+<body class="bg-gray-950 text-gray-100 min-h-screen">
+
+    <!-- Nav -->
+    <nav class="fixed top-0 w-full z-50 bg-gray-950/80 backdrop-blur-md border-b border-gray-800/50">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="icon.svg" alt="ORIC Labs" class="w-8 h-8 rounded-lg">
+                <span class="font-semibold text-lg">ORIC Labs</span>
+            </a>
+            <div class="hidden md:flex items-center gap-8 text-sm text-gray-400">
+                <a href="index.html#projects" class="hover:text-saffron-500 transition-colors">Projects</a>
+                <a href="index.html#extensions" class="hover:text-saffron-500 transition-colors">Extensions</a>
+                <a href="privacy.html" class="text-saffron-500">Privacy</a>
+                <a href="https://github.com/oriclabs" target="_blank" rel="noopener" class="hover:text-saffron-500 transition-colors flex items-center gap-1">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                    GitHub
+                </a>
+            </div>
+            <div class="flex items-center gap-4">
+                <button id="theme-toggle" class="theme-toggle w-9 h-9 rounded-lg flex items-center justify-center text-gray-400 hover:text-saffron-500 transition-colors border border-gray-800 hover:border-saffron-500/30" aria-label="Toggle theme">
+                    <svg id="icon-sun" class="w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+                    <svg id="icon-moon" class="w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+                </button>
+                <button id="mobile-menu-btn" class="md:hidden text-gray-400 hover:text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden border-t border-gray-800/50 bg-gray-950/95 backdrop-blur-md">
+            <div class="px-6 py-4 flex flex-col gap-4 text-sm text-gray-400">
+                <a href="index.html#projects" class="hover:text-saffron-500">Projects</a>
+                <a href="index.html#extensions" class="hover:text-saffron-500">Extensions</a>
+                <a href="privacy.html" class="text-saffron-500">Privacy</a>
+                <a href="https://github.com/oriclabs" target="_blank" rel="noopener" class="hover:text-saffron-500">GitHub</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="pt-32 pb-12 px-6">
+        <div class="max-w-4xl mx-auto">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 rounded-xl bg-green-500/10 border border-green-500/20 flex items-center justify-center">
+                    <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold">Privacy Policy</h1>
+            </div>
+            <p class="text-gray-500">Last updated: March 2026</p>
+        </div>
+    </section>
+
+    <!-- General Policy -->
+    <section class="py-8 px-6">
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-gray-900 border border-gray-800 rounded-2xl p-8 mb-12">
+                <h2 class="text-xl font-semibold mb-6">Our Commitment</h2>
+                <p class="text-gray-400 mb-6">ORIC Labs ("we", "us", "our") is committed to protecting your privacy. This policy describes what data our extensions and services collect, how it is used, and your rights regarding that data.</p>
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <div class="flex items-start gap-3 p-4 rounded-xl bg-green-500/5 border border-green-500/10">
+                        <svg class="w-5 h-5 text-green-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                        <div>
+                            <p class="text-sm font-medium text-green-400">Open Source</p>
+                            <p class="text-xs text-gray-500 mt-1">All extensions are open source. You can inspect exactly what data is accessed in the source code.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3 p-4 rounded-xl bg-green-500/5 border border-green-500/10">
+                        <svg class="w-5 h-5 text-green-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                        <div>
+                            <p class="text-sm font-medium text-green-400">No Data Sales</p>
+                            <p class="text-xs text-gray-500 mt-1">We do not sell, share, or monetize any user data. Your data is never provided to third-party advertisers.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3 p-4 rounded-xl bg-green-500/5 border border-green-500/10">
+                        <svg class="w-5 h-5 text-green-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                        <div>
+                            <p class="text-sm font-medium text-green-400">No Tracking</p>
+                            <p class="text-xs text-gray-500 mt-1">No analytics, telemetry, or tracking scripts are included unless explicitly noted per extension.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3 p-4 rounded-xl bg-green-500/5 border border-green-500/10">
+                        <svg class="w-5 h-5 text-green-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                        <div>
+                            <p class="text-sm font-medium text-green-400">Local First</p>
+                            <p class="text-xs text-gray-500 mt-1">Data stays on your device unless a feature explicitly requires network access, which is always documented.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- General Sections -->
+            <div class="space-y-10 mb-16">
+                <div>
+                    <h2 class="text-lg font-semibold mb-3 flex items-center gap-2">
+                        <span class="w-6 h-6 rounded-full bg-saffron-500/10 text-saffron-500 text-xs flex items-center justify-center font-bold">1</span>
+                        Information We Collect
+                    </h2>
+                    <div class="text-sm text-gray-400 space-y-3 ml-8">
+                        <p>Our extensions are designed with a privacy-first approach. The specific data accessed varies by extension and is detailed in the per-extension sections below. In general:</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-saffron-500 shrink-0"></span>We do not collect personal information (name, email, address) through our extensions.</li>
+                            <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-saffron-500 shrink-0"></span>We do not access browsing history beyond what is required for the extension's stated functionality.</li>
+                            <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-saffron-500 shrink-0"></span>Any data processed is stored locally in your browser using standard browser storage APIs (localStorage, IndexedDB).</li>
+                            <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-saffron-500 shrink-0"></span>If an extension requires network requests, only the minimum necessary data is transmitted, and this is documented below.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div>
+                    <h2 class="text-lg font-semibold mb-3 flex items-center gap-2">
+                        <span class="w-6 h-6 rounded-full bg-saffron-500/10 text-saffron-500 text-xs flex items-center justify-center font-bold">2</span>
+                        How We Use Information
+                    </h2>
+                    <div class="text-sm text-gray-400 space-y-3 ml-8">
+                        <p>Any data accessed by our extensions is used solely to provide the extension's core functionality. We do not use your data for:</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-saffron-500 shrink-0"></span>Advertising or ad targeting</li>
+                            <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-saffron-500 shrink-0"></span>User profiling or behavioral analysis</li>
+                            <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-saffron-500 shrink-0"></span>Sale or transfer to third parties</li>
+                            <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-saffron-500 shrink-0"></span>Any purpose unrelated to the extension's functionality</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div>
+                    <h2 class="text-lg font-semibold mb-3 flex items-center gap-2">
+                        <span class="w-6 h-6 rounded-full bg-saffron-500/10 text-saffron-500 text-xs flex items-center justify-center font-bold">3</span>
+                        Data Storage & Security
+                    </h2>
+                    <div class="text-sm text-gray-400 space-y-3 ml-8">
+                        <p>All data is stored locally on your device using your browser's built-in storage mechanisms. We do not operate external servers that store user data. Your data is protected by your browser's security model and your device's own security.</p>
+                        <p>When you uninstall an extension, all locally stored data associated with it is removed by the browser.</p>
+                    </div>
+                </div>
+
+                <div>
+                    <h2 class="text-lg font-semibold mb-3 flex items-center gap-2">
+                        <span class="w-6 h-6 rounded-full bg-saffron-500/10 text-saffron-500 text-xs flex items-center justify-center font-bold">4</span>
+                        Your Rights
+                    </h2>
+                    <div class="text-sm text-gray-400 space-y-3 ml-8">
+                        <p>You have full control over your data:</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-saffron-500 shrink-0"></span><strong class="text-gray-300">Access:</strong> All data is stored locally and accessible through your browser's developer tools.</li>
+                            <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-saffron-500 shrink-0"></span><strong class="text-gray-300">Delete:</strong> Clear extension data at any time through your browser settings, or uninstall the extension entirely.</li>
+                            <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-saffron-500 shrink-0"></span><strong class="text-gray-300">Portability:</strong> Since data is stored locally, it is inherently under your control.</li>
+                            <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-saffron-500 shrink-0"></span><strong class="text-gray-300">Inspect:</strong> All extensions are open source. Review the code on <a href="https://github.com/oriclabs" class="text-saffron-400 hover:text-saffron-300">GitHub</a> to verify our claims.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div>
+                    <h2 class="text-lg font-semibold mb-3 flex items-center gap-2">
+                        <span class="w-6 h-6 rounded-full bg-saffron-500/10 text-saffron-500 text-xs flex items-center justify-center font-bold">5</span>
+                        Third-Party Services
+                    </h2>
+                    <div class="text-sm text-gray-400 space-y-3 ml-8">
+                        <p>Some extensions may interact with third-party APIs to provide functionality (e.g., querying biological databases). In these cases:</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-saffron-500 shrink-0"></span>Only the minimum data required for the query is sent (e.g., search terms).</li>
+                            <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-saffron-500 shrink-0"></span>No personal identifiers are included in API requests.</li>
+                            <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-saffron-500 shrink-0"></span>Third-party services are governed by their own privacy policies.</li>
+                            <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-saffron-500 shrink-0"></span>Which extensions use third-party services is documented in the extension-specific sections below.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div>
+                    <h2 class="text-lg font-semibold mb-3 flex items-center gap-2">
+                        <span class="w-6 h-6 rounded-full bg-saffron-500/10 text-saffron-500 text-xs flex items-center justify-center font-bold">6</span>
+                        Children's Privacy
+                    </h2>
+                    <div class="text-sm text-gray-400 ml-8">
+                        <p>Our extensions do not knowingly collect any personal information from children under 13. Since our extensions do not collect personal information from any users, they are safe for use by all ages.</p>
+                    </div>
+                </div>
+
+                <div>
+                    <h2 class="text-lg font-semibold mb-3 flex items-center gap-2">
+                        <span class="w-6 h-6 rounded-full bg-saffron-500/10 text-saffron-500 text-xs flex items-center justify-center font-bold">7</span>
+                        Changes to This Policy
+                    </h2>
+                    <div class="text-sm text-gray-400 ml-8">
+                        <p>We may update this privacy policy from time to time. Changes will be reflected on this page with an updated "Last updated" date. Significant changes will be communicated through our GitHub repositories.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Per-Extension Privacy Details -->
+            <h2 class="text-2xl font-bold mb-8">Extension-Specific Details</h2>
+
+            <div class="space-y-6 mb-16">
+
+                <!-- ibid -->
+                <div class="card-hover bg-gray-900 border border-gray-800 rounded-2xl p-8">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-xl bg-saffron-500/10 border border-saffron-500/20 flex items-center justify-center">
+                            <svg class="w-5 h-5 text-saffron-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9"/></svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold">ibid</h3>
+                            <p class="text-xs text-gray-500">Browser extension (Chrome, Edge, Firefox) & Web App</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4 text-sm text-gray-400">
+                        <div>
+                            <h4 class="text-gray-300 font-medium mb-2">What data is accessed</h4>
+                            <ul class="space-y-1.5">
+                                <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-saffron-500 shrink-0"></span>Page content on the active tab (to extract citations and references)</li>
+                                <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-saffron-500 shrink-0"></span>Page URL and title (to associate citations with their source)</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-gray-300 font-medium mb-2">How data is stored</h4>
+                            <ul class="space-y-1.5">
+                                <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-saffron-500 shrink-0"></span>All extracted data is stored locally in your browser's storage (localStorage / IndexedDB)</li>
+                                <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-saffron-500 shrink-0"></span>No data is transmitted to external servers</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-gray-300 font-medium mb-2">Permissions required</h4>
+                            <ul class="space-y-1.5">
+                                <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-saffron-500 shrink-0"></span><code class="text-xs bg-gray-800 px-1.5 py-0.5 rounded">activeTab</code> &mdash; to read the current page's content when you activate the extension</li>
+                                <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-saffron-500 shrink-0"></span><code class="text-xs bg-gray-800 px-1.5 py-0.5 rounded">storage</code> &mdash; to save your citations and preferences locally</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap gap-2 mt-5 pt-5 border-t border-gray-800">
+                        <span class="px-2.5 py-1 text-xs rounded-full bg-green-500/10 text-green-400 border border-green-500/20">No remote data collection</span>
+                        <span class="px-2.5 py-1 text-xs rounded-full bg-green-500/10 text-green-400 border border-green-500/20">No tracking</span>
+                        <span class="px-2.5 py-1 text-xs rounded-full bg-gray-800 text-gray-400 border border-gray-700">Local storage only</span>
+                    </div>
+                </div>
+
+                <!-- biopeek -->
+                <div class="card-hover bg-gray-900 border border-gray-800 rounded-2xl p-8">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-xl bg-saffron-500/10 border border-saffron-500/20 flex items-center justify-center">
+                            <svg class="w-5 h-5 text-saffron-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold">biopeek</h3>
+                            <p class="text-xs text-gray-500">biolang extension (Chrome, Edge, Firefox)</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4 text-sm text-gray-400">
+                        <div>
+                            <h4 class="text-gray-300 font-medium mb-2">What data is accessed</h4>
+                            <ul class="space-y-1.5">
+                                <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-saffron-500 shrink-0"></span>Biological data structures on the current page for inspection and preview</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-gray-300 font-medium mb-2">How data is stored</h4>
+                            <ul class="space-y-1.5">
+                                <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-saffron-500 shrink-0"></span>Data is processed in-memory only; nothing is persisted or stored</li>
+                                <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-saffron-500 shrink-0"></span>No data is transmitted to external servers</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-gray-300 font-medium mb-2">Permissions required</h4>
+                            <ul class="space-y-1.5">
+                                <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-saffron-500 shrink-0"></span><code class="text-xs bg-gray-800 px-1.5 py-0.5 rounded">activeTab</code> &mdash; to read biological data on the current page</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap gap-2 mt-5 pt-5 border-t border-gray-800">
+                        <span class="px-2.5 py-1 text-xs rounded-full bg-green-500/10 text-green-400 border border-green-500/20">No data collection</span>
+                        <span class="px-2.5 py-1 text-xs rounded-full bg-green-500/10 text-green-400 border border-green-500/20">No storage</span>
+                        <span class="px-2.5 py-1 text-xs rounded-full bg-green-500/10 text-green-400 border border-green-500/20">No network requests</span>
+                    </div>
+                </div>
+
+                <!-- biogist -->
+                <div class="card-hover bg-gray-900 border border-gray-800 rounded-2xl p-8">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-xl bg-saffron-500/10 border border-saffron-500/20 flex items-center justify-center">
+                            <svg class="w-5 h-5 text-saffron-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold">biogist</h3>
+                            <p class="text-xs text-gray-500">biolang extension (Chrome, Edge, Firefox)</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4 text-sm text-gray-400">
+                        <div>
+                            <h4 class="text-gray-300 font-medium mb-2">What data is accessed</h4>
+                            <ul class="space-y-1.5">
+                                <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-saffron-500 shrink-0"></span>Page content and selected text for summarization and gist extraction</li>
+                                <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-saffron-500 shrink-0"></span>Document metadata (title, author) when available</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-gray-300 font-medium mb-2">How data is stored</h4>
+                            <ul class="space-y-1.5">
+                                <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-saffron-500 shrink-0"></span>Summaries are processed locally and may be saved to browser local storage</li>
+                                <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-saffron-500 shrink-0"></span>No document content is sent to external servers</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-gray-300 font-medium mb-2">Permissions required</h4>
+                            <ul class="space-y-1.5">
+                                <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-saffron-500 shrink-0"></span><code class="text-xs bg-gray-800 px-1.5 py-0.5 rounded">activeTab</code> &mdash; to read page content for summarization</li>
+                                <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-saffron-500 shrink-0"></span><code class="text-xs bg-gray-800 px-1.5 py-0.5 rounded">storage</code> &mdash; to save generated summaries locally</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap gap-2 mt-5 pt-5 border-t border-gray-800">
+                        <span class="px-2.5 py-1 text-xs rounded-full bg-green-500/10 text-green-400 border border-green-500/20">No remote data collection</span>
+                        <span class="px-2.5 py-1 text-xs rounded-full bg-green-500/10 text-green-400 border border-green-500/20">No tracking</span>
+                        <span class="px-2.5 py-1 text-xs rounded-full bg-gray-800 text-gray-400 border border-gray-700">Local storage only</span>
+                    </div>
+                </div>
+
+                <!-- biokhoj -->
+                <div class="card-hover bg-gray-900 border border-gray-800 rounded-2xl p-8">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-xl bg-saffron-500/10 border border-saffron-500/20 flex items-center justify-center">
+                            <svg class="w-5 h-5 text-saffron-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold">biokhoj</h3>
+                            <p class="text-xs text-gray-500">biolang extension (Chrome, Edge, Firefox)</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4 text-sm text-gray-400">
+                        <div>
+                            <h4 class="text-gray-300 font-medium mb-2">What data is accessed</h4>
+                            <ul class="space-y-1.5">
+                                <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-saffron-500 shrink-0"></span>Search queries you enter into the biokhoj search interface</li>
+                                <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-saffron-500 shrink-0"></span>Selected text on pages when using the "search this" feature</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-gray-300 font-medium mb-2">How data is stored</h4>
+                            <ul class="space-y-1.5">
+                                <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-saffron-500 shrink-0"></span>Search history is stored locally in browser storage</li>
+                                <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-saffron-500 shrink-0"></span>Search results are cached locally for performance</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-gray-300 font-medium mb-2">Network requests</h4>
+                            <ul class="space-y-1.5">
+                                <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-yellow-500 shrink-0"></span><strong class="text-yellow-400">Search queries are sent to external biological databases</strong> (e.g., NCBI, UniProt) to fetch results</li>
+                                <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-saffron-500 shrink-0"></span>Only the search term is transmitted &mdash; no personal identifiers, cookies, or browser fingerprints</li>
+                                <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-saffron-500 shrink-0"></span>These third-party databases have their own privacy policies</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-gray-300 font-medium mb-2">Permissions required</h4>
+                            <ul class="space-y-1.5">
+                                <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-saffron-500 shrink-0"></span><code class="text-xs bg-gray-800 px-1.5 py-0.5 rounded">activeTab</code> &mdash; to read selected text for search</li>
+                                <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-saffron-500 shrink-0"></span><code class="text-xs bg-gray-800 px-1.5 py-0.5 rounded">storage</code> &mdash; to save search history and cache results</li>
+                                <li class="flex items-start gap-2"><span class="mt-1.5 w-1 h-1 rounded-full bg-saffron-500 shrink-0"></span><code class="text-xs bg-gray-800 px-1.5 py-0.5 rounded">host permissions</code> &mdash; to query biological database APIs</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap gap-2 mt-5 pt-5 border-t border-gray-800">
+                        <span class="px-2.5 py-1 text-xs rounded-full bg-yellow-500/10 text-yellow-400 border border-yellow-500/20">Search queries sent externally</span>
+                        <span class="px-2.5 py-1 text-xs rounded-full bg-green-500/10 text-green-400 border border-green-500/20">No personal data transmitted</span>
+                        <span class="px-2.5 py-1 text-xs rounded-full bg-green-500/10 text-green-400 border border-green-500/20">No tracking</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact -->
+            <div class="bg-gray-900 border border-gray-800 rounded-2xl p-8">
+                <h2 class="text-lg font-semibold mb-4">Contact Us</h2>
+                <p class="text-sm text-gray-400 mb-4">If you have questions about this privacy policy or our data practices, you can reach us through:</p>
+                <div class="flex flex-wrap gap-3">
+                    <a href="https://github.com/oriclabs" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2 text-sm rounded-lg border border-gray-700 text-gray-300 hover:border-saffron-500/50 hover:text-saffron-400 transition-colors">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                        GitHub Issues
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 border-t border-gray-800/50">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-3">
+                <img src="icon.svg" alt="ORIC Labs" class="w-6 h-6 rounded">
+                <span class="text-sm text-gray-500">ORIC Labs &mdash; Open Research & Inference Center</span>
+            </div>
+            <div class="flex items-center gap-6 text-sm text-gray-500">
+                <a href="index.html" class="hover:text-saffron-500 transition-colors">Home</a>
+                <a href="privacy.html" class="hover:text-saffron-500 transition-colors">Privacy</a>
+                <a href="https://github.com/oriclabs" target="_blank" rel="noopener" class="hover:text-saffron-500 transition-colors">GitHub</a>
+                <span>&copy; 2024 ORIC Labs</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Theme toggle
+        function updateThemeIcons() {
+            var theme = document.documentElement.getAttribute('data-theme') || 'dark';
+            document.getElementById('icon-sun').classList.toggle('hidden', theme !== 'dark');
+            document.getElementById('icon-moon').classList.toggle('hidden', theme !== 'light');
+        }
+        updateThemeIcons();
+        document.getElementById('theme-toggle').addEventListener('click', function() {
+            var current = document.documentElement.getAttribute('data-theme') || 'dark';
+            var next = current === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', next);
+            localStorage.setItem('oric-theme', next);
+            updateThemeIcons();
+        });
+
+        // Mobile menu
+        var menuBtn = document.getElementById('mobile-menu-btn');
+        var mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', function() { mobileMenu.classList.toggle('hidden'); });
+        mobileMenu.querySelectorAll('a').forEach(function(link) { link.addEventListener('click', function() { mobileMenu.classList.add('hidden'); }); });
+    </script>
+</body>
+</html>
