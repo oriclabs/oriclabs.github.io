@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ORIC Labs - Open Research & Inference Center</title>
+    <meta name="description" content="ORIC Labs builds open-source tools for biological computing, language processing, and intelligent research.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>O</text></svg>">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        saffron: {
+                            50: '#fff8f0',
+                            100: '#fff0db',
+                            200: '#ffddb3',
+                            300: '#ffc580',
+                            400: '#ffaa4d',
+                            500: '#FF9933',
+                            600: '#e68a2e',
+                            700: '#cc7a29',
+                            800: '#995c1f',
+                            900: '#663d14',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #FF9933 0%, #e68a2e 50%, #cc7a29 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .card-hover {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(255, 153, 51, 0.15);
+        }
+
+        .hero-bg {
+            background: radial-gradient(ellipse at top, rgba(255, 153, 51, 0.08) 0%, transparent 60%);
+        }
+
+        .ext-badge {
+            transition: background-color 0.15s ease;
+        }
+        .ext-badge:hover {
+            background-color: #FF9933;
+            color: #fff;
+        }
+    </style>
+</head>
+<body class="bg-gray-950 text-gray-100 min-h-screen">
+
+    <!-- Nav -->
+    <nav class="fixed top-0 w-full z-50 bg-gray-950/80 backdrop-blur-md border-b border-gray-800/50">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-saffron-500 flex items-center justify-center font-bold text-gray-950 text-sm">O</div>
+                <span class="font-semibold text-lg">ORIC Labs</span>
+            </a>
+            <div class="hidden md:flex items-center gap-8 text-sm text-gray-400">
+                <a href="#projects" class="hover:text-saffron-500 transition-colors">Projects</a>
+                <a href="#extensions" class="hover:text-saffron-500 transition-colors">Extensions</a>
+                <a href="https://github.com/oriclabs" target="_blank" rel="noopener" class="hover:text-saffron-500 transition-colors flex items-center gap-1">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                    GitHub
+                </a>
+            </div>
+            <button id="mobile-menu-btn" class="md:hidden text-gray-400 hover:text-white">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden border-t border-gray-800/50 bg-gray-950/95 backdrop-blur-md">
+            <div class="px-6 py-4 flex flex-col gap-4 text-sm text-gray-400">
+                <a href="#projects" class="hover:text-saffron-500">Projects</a>
+                <a href="#extensions" class="hover:text-saffron-500">Extensions</a>
+                <a href="https://github.com/oriclabs" target="_blank" rel="noopener" class="hover:text-saffron-500">GitHub</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero-bg pt-32 pb-20 px-6">
+        <div class="max-w-6xl mx-auto text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-saffron-500/10 border border-saffron-500/20 text-saffron-400 text-sm mb-8">
+                <span class="w-1.5 h-1.5 rounded-full bg-saffron-500 animate-pulse"></span>
+                Open Source
+            </div>
+            <h1 class="text-5xl md:text-7xl font-800 tracking-tight mb-6">
+                <span class="gradient-text">ORIC</span> Labs
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto mb-4 font-light">
+                Open Research & Inference Center
+            </p>
+            <p class="text-base text-gray-500 max-w-xl mx-auto mb-10">
+                Building open-source tools for biological computing, language processing, and intelligent research.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#projects" class="px-6 py-3 bg-saffron-500 text-gray-950 font-semibold rounded-lg hover:bg-saffron-400 transition-colors">
+                    Explore Projects
+                </a>
+                <a href="https://github.com/oriclabs" target="_blank" rel="noopener" class="px-6 py-3 border border-gray-700 text-gray-300 font-medium rounded-lg hover:border-saffron-500/50 hover:text-saffron-400 transition-colors">
+                    View on GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="py-24 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Projects</h2>
+                <p class="text-gray-500 max-w-lg mx-auto">Core projects driving our research and tooling</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+
+                <!-- biolang -->
+                <div class="card-hover bg-gray-900 border border-gray-800 rounded-2xl p-8">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-saffron-500/10 border border-saffron-500/20 flex items-center justify-center">
+                            <svg class="w-6 h-6 text-saffron-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+                        </div>
+                        <a href="https://github.com/oriclabs/biolang" target="_blank" rel="noopener" class="text-gray-500 hover:text-saffron-500 transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                        </a>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">biolang</h3>
+                    <p class="text-gray-400 mb-6">A programming language and toolkit for biological computing and bioinformatics research.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 text-xs rounded-full bg-gray-800 text-gray-400 border border-gray-700">language</span>
+                        <span class="px-3 py-1 text-xs rounded-full bg-gray-800 text-gray-400 border border-gray-700">bioinformatics</span>
+                        <span class="px-3 py-1 text-xs rounded-full bg-gray-800 text-gray-400 border border-gray-700">open-source</span>
+                    </div>
+                </div>
+
+                <!-- ibid -->
+                <div class="card-hover bg-gray-900 border border-gray-800 rounded-2xl p-8">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-saffron-500/10 border border-saffron-500/20 flex items-center justify-center">
+                            <svg class="w-6 h-6 text-saffron-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
+                        </div>
+                        <a href="https://github.com/oriclabs/ibid" target="_blank" rel="noopener" class="text-gray-500 hover:text-saffron-500 transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                        </a>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">ibid</h3>
+                    <p class="text-gray-400 mb-6">A cross-browser extension and web platform for intelligent research and citation management.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 text-xs rounded-full bg-gray-800 text-gray-400 border border-gray-700">browser extension</span>
+                        <span class="px-3 py-1 text-xs rounded-full bg-gray-800 text-gray-400 border border-gray-700">chrome</span>
+                        <span class="px-3 py-1 text-xs rounded-full bg-gray-800 text-gray-400 border border-gray-700">firefox</span>
+                        <span class="px-3 py-1 text-xs rounded-full bg-gray-800 text-gray-400 border border-gray-700">edge</span>
+                        <span class="px-3 py-1 text-xs rounded-full bg-gray-800 text-gray-400 border border-gray-700">website</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Extensions -->
+    <section id="extensions" class="py-24 px-6 bg-gray-900/30">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Extensions</h2>
+                <p class="text-gray-500 max-w-lg mx-auto">Specialized extensions that expand the capabilities of our core projects</p>
+            </div>
+
+            <!-- biolang extensions -->
+            <div class="mb-12">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-2 h-2 rounded-full bg-saffron-500"></div>
+                    <h3 class="text-xl font-semibold text-gray-300">biolang extensions</h3>
+                </div>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                    <!-- biopeek -->
+                    <div class="card-hover bg-gray-900 border border-gray-800 rounded-xl p-6">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-9 h-9 rounded-lg bg-saffron-500/10 flex items-center justify-center">
+                                <svg class="w-4 h-4 text-saffron-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                            </div>
+                            <h4 class="font-semibold">biopeek</h4>
+                        </div>
+                        <p class="text-sm text-gray-400 mb-4">Quick preview and inspection tools for biological data structures in biolang.</p>
+                        <a href="https://github.com/oriclabs/biopeek" target="_blank" rel="noopener" class="ext-badge inline-flex items-center gap-1 px-3 py-1 text-xs rounded-full border border-saffron-500/30 text-saffron-400">
+                            View repo
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                        </a>
+                    </div>
+
+                    <!-- biogist -->
+                    <div class="card-hover bg-gray-900 border border-gray-800 rounded-xl p-6">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-9 h-9 rounded-lg bg-saffron-500/10 flex items-center justify-center">
+                                <svg class="w-4 h-4 text-saffron-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            </div>
+                            <h4 class="font-semibold">biogist</h4>
+                        </div>
+                        <p class="text-sm text-gray-400 mb-4">Summarization and gist extraction for biological research documents and data.</p>
+                        <a href="https://github.com/oriclabs/biogist" target="_blank" rel="noopener" class="ext-badge inline-flex items-center gap-1 px-3 py-1 text-xs rounded-full border border-saffron-500/30 text-saffron-400">
+                            View repo
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                        </a>
+                    </div>
+
+                    <!-- biokhoj -->
+                    <div class="card-hover bg-gray-900 border border-gray-800 rounded-xl p-6">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-9 h-9 rounded-lg bg-saffron-500/10 flex items-center justify-center">
+                                <svg class="w-4 h-4 text-saffron-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                            </div>
+                            <h4 class="font-semibold">biokhoj</h4>
+                        </div>
+                        <p class="text-sm text-gray-400 mb-4">Search and discovery engine for biological datasets and research within the biolang ecosystem.</p>
+                        <a href="https://github.com/oriclabs/biokhoj" target="_blank" rel="noopener" class="ext-badge inline-flex items-center gap-1 px-3 py-1 text-xs rounded-full border border-saffron-500/30 text-saffron-400">
+                            View repo
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ibid extensions -->
+            <div>
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-2 h-2 rounded-full bg-saffron-500"></div>
+                    <h3 class="text-xl font-semibold text-gray-300">ibid extensions</h3>
+                </div>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                    <!-- Chrome -->
+                    <div class="card-hover bg-gray-900 border border-gray-800 rounded-xl p-6">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-9 h-9 rounded-lg bg-saffron-500/10 flex items-center justify-center">
+                                <svg class="w-4 h-4 text-saffron-400" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M12 7.5V2" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M8.1 9.3L3.6 6.6" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M8.1 14.7l-4.5 2.7" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+                            </div>
+                            <h4 class="font-semibold">Chrome</h4>
+                        </div>
+                        <p class="text-sm text-gray-400 mb-4">ibid extension for Google Chrome browser.</p>
+                        <span class="ext-badge inline-flex items-center gap-1 px-3 py-1 text-xs rounded-full border border-gray-700 text-gray-400">
+                            Chrome Web Store
+                        </span>
+                    </div>
+
+                    <!-- Firefox -->
+                    <div class="card-hover bg-gray-900 border border-gray-800 rounded-xl p-6">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-9 h-9 rounded-lg bg-saffron-500/10 flex items-center justify-center">
+                                <svg class="w-4 h-4 text-saffron-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                            </div>
+                            <h4 class="font-semibold">Firefox</h4>
+                        </div>
+                        <p class="text-sm text-gray-400 mb-4">ibid extension for Mozilla Firefox browser.</p>
+                        <span class="ext-badge inline-flex items-center gap-1 px-3 py-1 text-xs rounded-full border border-gray-700 text-gray-400">
+                            Firefox Add-ons
+                        </span>
+                    </div>
+
+                    <!-- Edge -->
+                    <div class="card-hover bg-gray-900 border border-gray-800 rounded-xl p-6">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-9 h-9 rounded-lg bg-saffron-500/10 flex items-center justify-center">
+                                <svg class="w-4 h-4 text-saffron-400" fill="currentColor" viewBox="0 0 24 24"><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M12 8v4l3 3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                            </div>
+                            <h4 class="font-semibold">Edge</h4>
+                        </div>
+                        <p class="text-sm text-gray-400 mb-4">ibid extension for Microsoft Edge browser.</p>
+                        <span class="ext-badge inline-flex items-center gap-1 px-3 py-1 text-xs rounded-full border border-gray-700 text-gray-400">
+                            Edge Add-ons
+                        </span>
+                    </div>
+
+                    <!-- Website -->
+                    <div class="card-hover bg-gray-900 border border-gray-800 rounded-xl p-6">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-9 h-9 rounded-lg bg-saffron-500/10 flex items-center justify-center">
+                                <svg class="w-4 h-4 text-saffron-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9"/></svg>
+                            </div>
+                            <h4 class="font-semibold">Website</h4>
+                        </div>
+                        <p class="text-sm text-gray-400 mb-4">ibid web application for browser-based access.</p>
+                        <span class="ext-badge inline-flex items-center gap-1 px-3 py-1 text-xs rounded-full border border-gray-700 text-gray-400">
+                            Web App
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 border-t border-gray-800/50">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-3">
+                <div class="w-6 h-6 rounded bg-saffron-500 flex items-center justify-center font-bold text-gray-950 text-xs">O</div>
+                <span class="text-sm text-gray-500">ORIC Labs &mdash; Open Research & Inference Center</span>
+            </div>
+            <div class="flex items-center gap-6 text-sm text-gray-500">
+                <a href="https://github.com/oriclabs" target="_blank" rel="noopener" class="hover:text-saffron-500 transition-colors">GitHub</a>
+                <span>&copy; 2024 ORIC Labs</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
