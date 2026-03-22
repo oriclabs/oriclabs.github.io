@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FF9933" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#FF9933" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="saffron" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFAA4D"/>
+      <stop offset="100%" stop-color="#E68A2E"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background circle -->
+  <rect width="512" height="512" rx="96" fill="#0a0a0f"/>
+
+  <!-- Subtle glow behind center -->
+  <circle cx="256" cy="256" r="200" fill="url(#glow)"/>
+
+  <!-- Radiating lines -->
+  <!-- Top -->
+  <line x1="256" y1="256" x2="256" y2="80" stroke="#FF9933" stroke-width="3" stroke-opacity="0.25"/>
+  <!-- Bottom -->
+  <line x1="256" y1="256" x2="256" y2="432" stroke="#FF9933" stroke-width="3" stroke-opacity="0.25"/>
+  <!-- Left -->
+  <line x1="256" y1="256" x2="80" y2="256" stroke="#FF9933" stroke-width="3" stroke-opacity="0.25"/>
+  <!-- Right -->
+  <line x1="256" y1="256" x2="432" y2="256" stroke="#FF9933" stroke-width="3" stroke-opacity="0.25"/>
+  <!-- Top-left -->
+  <line x1="256" y1="256" x2="132" y2="132" stroke="#FF9933" stroke-width="3" stroke-opacity="0.15"/>
+  <!-- Top-right -->
+  <line x1="256" y1="256" x2="380" y2="132" stroke="#FF9933" stroke-width="3" stroke-opacity="0.15"/>
+  <!-- Bottom-left -->
+  <line x1="256" y1="256" x2="132" y2="380" stroke="#FF9933" stroke-width="3" stroke-opacity="0.15"/>
+  <!-- Bottom-right -->
+  <line x1="256" y1="256" x2="380" y2="380" stroke="#FF9933" stroke-width="3" stroke-opacity="0.15"/>
+
+  <!-- Outer orbit ring -->
+  <circle cx="256" cy="256" r="160" fill="none" stroke="#FF9933" stroke-width="1.5" stroke-opacity="0.15"/>
+
+  <!-- Middle orbit ring -->
+  <circle cx="256" cy="256" r="100" fill="none" stroke="#FF9933" stroke-width="2" stroke-opacity="0.25"/>
+
+  <!-- Orbital dots on outer ring -->
+  <circle cx="256" cy="96" r="10" fill="url(#saffron)" opacity="0.7"/>
+  <circle cx="256" cy="416" r="10" fill="url(#saffron)" opacity="0.7"/>
+  <circle cx="96" cy="256" r="10" fill="url(#saffron)" opacity="0.7"/>
+  <circle cx="416" cy="256" r="10" fill="url(#saffron)" opacity="0.7"/>
+
+  <!-- Orbital dots on middle ring -->
+  <circle cx="185" cy="185" r="7" fill="#FF9933" opacity="0.5"/>
+  <circle cx="327" cy="185" r="7" fill="#FF9933" opacity="0.5"/>
+  <circle cx="185" cy="327" r="7" fill="#FF9933" opacity="0.5"/>
+  <circle cx="327" cy="327" r="7" fill="#FF9933" opacity="0.5"/>
+
+  <!-- Inner ring -->
+  <circle cx="256" cy="256" r="44" fill="none" stroke="#FF9933" stroke-width="2.5" stroke-opacity="0.4"/>
+
+  <!-- Core origin dot -->
+  <circle cx="256" cy="256" r="22" fill="url(#saffron)"/>
+  <circle cx="256" cy="256" r="10" fill="#0a0a0f"/>
+  <circle cx="256" cy="256" r="5" fill="#FF9933"/>
+</svg>
